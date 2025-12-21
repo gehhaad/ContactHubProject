@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/all.min.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/index_style.css">
+        <link rel="stylesheet" href="./css/media_style.css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <!-- Navbar Section -->
+             <nav class="navbar navbar-expand-lg px-md-5 position-fixed top-0 start-0 end-0 z-1 px-sm-0">
+                <div class="container-fluid mx-md-5 mx-sm-3 px-md-5 px-sm-0 py-2 justify-content-between">
+                    <div class="contact-logo d-flex align-items-start gap-2">
+                        <i class="fa-solid fa-address-book text-white fs-5 rounded rounded-4 ajenda-icon"></i>
+                        <div class="contact-logo-title">
+                            <h1 class="fs-4 mb-0 fw-bold logo-title">Contact<span class="sub-logo-title">Hub</span></h1>
+                            <p class="logo-desc mb-0 fw-medium">Smart Contact Manager</p>
+                        </div>
+                    </div>
+                    <div class="contact-info d-flex gap-2">
+                        <button class="small text-white fw-semibold rounded rounded-4 add-icon">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Contact
+                        </button>
+                        <button class="small bg-transparent rounded rounded-4 notification-icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </button>
+                        <button class="small bg-transparent rounded rounded-4 notification-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <div>
+                            <img src="./images/avatar-4.jpg" alt="profile picture of the user" class="rounded rounded-4 pp-img">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Section -->
+        <main>
+            <!-- Cards Section -->
+            <Section class="container mx-auto px-md-5 py-5 mt-5 px-sm-0">
+                <div class="row flex-md-nowrap mt-md-3 mt-sm-5">
+                    <div class="col-md-4 col-sm-6 mb-sm-3">
+                        <div class="bg-white rounded rounded-4 px-4 py-3 shadow-sm card-style">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-users text-white rounded rounded-4 card1-icon"></i>
+                                <div> 
+                                    <p class="fw-medium card-title text-uppercase mb-0">Total</p>
+                                    <p class="fw-bold fs-4 card-count mb-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 mb-sm-3">
+                        <div class="bg-white rounded rounded-4 px-4 py-3 shadow-sm card-style">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-star text-white rounded rounded-4 card2-icon"></i>
+                                <div> 
+                                    <p class="fw-medium card-title text-uppercase mb-0">Favorites</p>
+                                    <p class="fw-bold fs-4 card-count mb-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="bg-white rounded rounded-4 px-4 py-3 shadow-sm card-style">
+                            <div class="d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-heart-pulse text-white rounded rounded-4 card3-icon"></i>
+                                <div> 
+                                    <p class="fw-medium card-title text-uppercase mb-0">Emergency</p>
+                                    <p class="fw-bold fs-4 card-count mb-0"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+
+            <!-- All Contact Area -->
+            <section class="container mx-auto px-md-5 px-sm-0">
+                <!-- Main Contact Area-->
+                <div class="row">
+                    <!-- Main Section -->
+                    <div class="col-xl-9 col-sm-12">
+                        <!-- Header & Search -->
+                        <div class="mb-4">
+                            <div class="d-flex flex-column mb-3">
+                                <h2 class="fw-bold title-main">All Contacts</h2>
+                                <p class="small sub-main">Manage and organize your 0 contacts</p>
+                            </div>
+                            <div class="position-relative">
+                                <span class="position-absolute top-50 start-0 translate-middle-y ps-3 search-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                                <input 
+                                    type="text"
+                                    id="searchInput"
+                                    class="form-control rounded rounded-4 small search-input"
+                                    placeholder="Search by name, phone, or email...">
+                            </div>
+                        </div>
+
+                        <!-- Contacts Grid -->
+                        <div id="contacts-grid">
+                            <div class="container">
+                                <div class="row justify-content-between contacts-grid " id="contactsContainer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Side Section -->
+                    <div class="col-xl-3 col-sm-12 d-flex flex-column position-sticky mb-2">
+                        <!-- Favorite Card -->
+                        <div class="bg-white rounded rounded-4 shadow-sm overflow-hidden favorite-card ">
+                            <div class="p-3 favorite-header">
+                                <div class="d-flex align-items-sm-start gap-3">
+                                    <i class="fa-solid fa-star rounded rounded-3 text-white small favorite-icon"></i>
+                                    <div>
+                                        <h2 class="fs-6 mb-0 fw-semibold fav-title">Favorites</h2>
+                                        <p class="fav-sub-title mb-0">Quick access to starred contacts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 overflow-y-auto hide-scrollbar favorite-body">
+                                <div class="text-center no-fav">
+                                    <p class="small fav-span"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Card -->
+                        <div class="bg-white rounded rounded-4 shadow-sm overflow-hidden mt-4 emergency-card">
+                            <div class="p-3 emergency-header">
+                                <div class="d-flex align-items-sm-start gap-3">
+                                    <i class="fa-solid fa-heart-pulse rounded rounded-3 text-white small emergency-icon"></i>
+                                    <div>
+                                        <h2 class="fs-6 mb-0 fw-semibold emergency-title">Emergency</h2>
+                                        <p class="emergency-sub-title mb-0">Important contacts for urgent calls</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 overflow-y-auto hide-scrollbar emergency-body">
+                                <div class="text-center no-emergency">
+                                    <p class="small emergency-span"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Contact Modal -->
+        <div class="position-fixed z-3 top-0 start-0 end-0 bottom-0 overflow-hidden d-none add-contact-modal">
+            <div class="position-fixed top-0 start-0 end-0 bottom-0 overlay"></div>
+            <div class="position-fixed top-0 start-0 end-0 bottom-0 overflow-hidden d-flex pt-5 justify-content-center mx-auto form-inner">
+                <div class="bg-white rounded rounded-4 position-relative  form-detials  d-flex flex-column">
+                    <div class="justify-content-between align-items-center z-2 header-form d-flex position-sticky top-0">
+                        <h2 class="fw-bold fs-5 mb-0 form-title">Add New Contact</h2>
+                        <button class="bg-transparent rounded rounded-3 close-icon"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="overflow-y-auto hide-scrollbar form-body ">
+                        <form class="p-4">
+                            <div class="d-flex flex-column align-items-center gap-3 pb-2 ">
+                                <div class="pp-avatar rounded rounded-circle">
+                                    <i class="fa-solid fa-user text-white fs-2"></i>
+                                </div>
+                                <label for="photoInput" class="d-flex align-items-center gap-2 rounded rounded-3 fw-medium small import-photo">
+                                    <i class="fa-solid fa-camera camera-icon"></i>
+                                    <span>Change Photo</span>
+                                </label>
+                                <input  type="file" accept="image/*" class="d-none" id="photoInput"/>
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                    Full Name <span class="valid-icon">*</span> 
+                                </label>
+                                <input type="text" placeholder="Enter full name" class="w-100 px-3 py-3 rounded rounded-3 small input-field fullName">
+                                <small class="text-danger d-none nameError">
+                                    Name should contain only letters and spaces (2-50 characters)
+                                </small>
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                    Phone Number <span class="valid-icon">*</span> 
+                                </label>
+                                <input type="text" placeholder="e.g., 01012345678" class="w-100 px-3 py-3 rounded rounded-3 small input-field phoneNumber">
+                                <small class="text-danger d-none phoneError">
+                                    Please enter a valid Egyptian phone number
+                                </small>
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                    Email Address
+                                </label>
+                                <input type="text" placeholder="name@example.com" class="w-100 px-3 py-3 rounded rounded-3 small input-field email">
+                                <small class="text-danger d-none emailError">
+                                    Please enter a valid email address
+                                </small>
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                    Address
+                                </label>
+                                <input type="text" placeholder="Enter address" class="w-100 px-3 py-3 rounded rounded-3 small input-field adress-field">
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                    Group
+                                </label>
+                                <select class="w-100 px-3 py-3 rounded rounded-3 small select-input-field">
+                                    <option value="">Select a group</option>
+                                    <option value="family">Family</option>
+                                    <option value="friends">Friends</option>
+                                    <option value="work">Work</option>
+                                    <option value="school">School</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="d-block mb-1 fw-medium small fn-input">
+                                Notes
+                                </label>
+                                <textarea rows="2" class="w-100 px-3 py-3 rounded rounded-3 small note-input-field" placeholder="Add notes about this contact"></textarea>
+                            </div>
+                            <div class="mb-4 d-flex flex-wrap gap-4">
+                                <label class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="rounded rounded-2 check-input" id="favCheck">
+                                    <span class="small fw-medium fav-icon">
+                                        <i class="fa-solid fa-star text-warning"></i>
+                                        Favorite
+                                    </span>
+                                </label>
+                                <label class="d-flex align-items-center gap-2">
+                                    <input type="checkbox" class="rounded rounded-2 check-input" id="emergencyCheck">
+                                    <span class="small fw-medium fav-icon">
+                                        <i class="fa-solid fa-heart-pulse pulses-icon"></i>
+                                        Emergency
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="d-flex gap-2 pt-2">
+                                <button type="button" class="w-50 rounded rounded-4 fw-semibold small cancel-btn">Cancel</button>
+                                <button type="button" class="w-50 rounded rounded-4 fw-semibold small text-white submit-btn">
+                                    <i class="fa-solid fa-check"></i>
+                                    Save Contact
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
