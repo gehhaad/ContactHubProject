@@ -135,6 +135,18 @@ The layout adapts to:
 
 ## Screenshots
 
+### Contact Management
+![Contact](screenshots/contact.png)
+
+### Add Contact
+![Add Contact](screenshots/add-contact.png)
+
+### Update Contact
+![Update Contact](screenshots/update-contact.png)
+
+### Delete Contact
+![Delete Contact](screenshots/delete-contact.png)
+
 ## Project Structure
 
 ```text
